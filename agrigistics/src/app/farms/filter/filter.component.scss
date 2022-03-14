@@ -1,0 +1,36 @@
+:host-context(.isHandset) {
+  flex-direction: column;
+  padding: 1rem;
+
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+
+    mat-form-field {
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+:host {
+  display: flex;
+  background: #00434B0A;
+}
+
+.search-container {
+  flex-direction: row;
+  mat-form-field {
+    margin-left: 1rem;
+  }
+}
+
+.remove-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}

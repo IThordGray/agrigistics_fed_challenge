@@ -1,0 +1,43 @@
+<div *ngIf="selectedBlock" class="list">
+  <div class="list-item">
+    <span class="heading">Status</span>
+    <app-status-icon [status]="selectedBlock.status" class="value"></app-status-icon>
+  </div>
+
+  <div class="list-item">
+    <span class="heading">Block</span>
+    <span class="value">{{selectedBlock.name}}</span>
+  </div>
+
+  <div class="list-item">
+    <span class="heading">Farm</span>
+    <span class="value">{{selectedBlock.farmName}}</span>
+  </div>
+
+  <div class="list-item">
+    <span class="heading">Variant</span>
+    <span class="value">{{selectedBlock.variant}}</span>
+  </div>
+
+  <div class="list-item">
+    <span class="heading">Ha</span>
+    <span class="value">{{selectedBlock.size}}</span>
+  </div>
+
+  <div class="list-item">
+    <span class="heading">Created</span>
+    <span class="value">{{selectedBlock.createdAt | date: 'dd/MM/yyyy'}}</span>
+  </div>
+
+  <div class="list-item">
+    <span class="heading">Removed</span>
+    <span class="value">{{selectedBlock.deletedAt | date: 'dd/MM/yyyy'}}</span>
+  </div>
+
+</div>
+
+<mat-paginator
+  hidePageSize
+  showFirstLastButtons
+  aria-label="Select page of farm blocks">
+</mat-paginator>

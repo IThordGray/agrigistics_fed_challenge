@@ -1,0 +1,25 @@
+<div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Select or type a farm</mat-label>
+    <mat-select [ngModel]="selectedFarm" (ngModelChange)="filter($event)">
+      <mat-option *ngFor="let farm of searchableFarms$ | async" [value]="farm">{{farm}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Search Columns</mat-label>
+    <input matInput #search type="search" [ngModel]="searchText">
+  </mat-form-field>
+</div>
+
+<div class="remove-container">
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip *ngIf="searchText" color="primary" selected removable (removed)="clearSearch()">
+      <span>{{searchText}}</span>
+      <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+  </mat-chip-list>
+  <mat-slide-toggle [checked]="showRemovedOnly$ | async" (change)="filterRemoved($event.checked)" color="primary">Removed blocks</mat-slide-toggle>
+</div>

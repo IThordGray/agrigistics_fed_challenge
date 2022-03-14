@@ -1,0 +1,17 @@
+@import "../../../styles.typography";
+
+.list-item {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.heading {
+  @extend .subtext;
+  font-weight: 600;
+}
+
+.value {
+  margin-left: auto;
+}

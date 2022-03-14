@@ -1,0 +1,61 @@
+$spacer: 1rem;
+// Breaking away from bootstrap spacing to stick to material design principles of 8px;
+$spacers: map-merge(
+    (
+      0: (($spacer / 2) * 0), // 0px
+      1: (($spacer / 2) * 1), // 8px
+      2: (($spacer / 2) * 2), // 16px
+      3: (($spacer / 2) * 3), // 24px
+      4: (($spacer / 2) * 4), // 32px
+      5: (($spacer / 2) * 5), // 40px
+      6: (($spacer / 2) * 6), // 48px
+    ), ()
+);
+
+// Taken from Bootstrap.
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $length in $spacers {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+    .#{$abbrev}t-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-top: $length !important;
+    }
+    .#{$abbrev}r-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-right: $length !important;
+    }
+    .#{$abbrev}b-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-bottom: $length !important;
+    }
+    .#{$abbrev}l-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length !important;
+    }
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.d-flex {
+  display: flex !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+

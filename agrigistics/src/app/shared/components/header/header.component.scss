@@ -1,0 +1,14 @@
+:host-context(.isHandset) {
+  .header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.header {
+  padding-left: 5rem;
+  padding-right: 5rem;
+
+  display: flex;
+  height: 4rem;
+}

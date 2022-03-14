@@ -1,0 +1,28 @@
+:host-context(.isHandset) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .container-filter {
+    margin-top: 1.5rem;
+  }
+}
+
+.container {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  border-radius: 0.25rem;
+  background: var(--white);
+}
+
+.container-filter {
+  margin-top: 2rem;
+}
+
+.fab-button {
+  position: fixed;
+  z-index: 10;
+  bottom: 1rem;
+  right: 1rem;
+}

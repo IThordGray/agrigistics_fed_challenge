@@ -1,0 +1,61 @@
+<mat-toolbar class="header" color="primary">
+  <span class="d-flex align-items-center">
+  <button
+    (click)="expandMenu()"
+    aria-label="Toggle sidenav"
+    class="mr-3"
+    mat-icon-button
+    type="button">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+
+  <img *ngIf="!isHandset" alt="Agrigistics logo" src="assets/images/logo-light.svg">
+  </span>
+
+  <span [class.ml-auto]="!isHandset">Crownhill</span>
+
+  <span class="ml-auto">
+    <button
+      (click)="showNotifications()"
+      aria-label="Show notifications" mat-icon-button>
+        <mat-icon>notifications</mat-icon>
+    </button>
+      <ng-container *ngIf="isHandset; then mobileActions; else desktopActions">
+      </ng-container>
+    </span>
+
+</mat-toolbar>
+
+<ng-template #mobileActions>
+  <button
+    (click)="showSubActions()"
+    aria-label="Expand sub-actions"
+    mat-icon-button
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</ng-template>
+
+<ng-template #desktopActions>
+  <button
+    (click)="downloadApp()"
+    aria-label="Install app as PWA"
+    mat-icon-button
+  >
+    <mat-icon>file_download</mat-icon>
+  </button>
+  <button
+    (click)="showProfile()"
+    aria-label="Show profile"
+    mat-icon-button
+  >
+    <mat-icon>person</mat-icon>
+  </button>
+  <button
+    (click)="showHelp()"
+    aria-label="Show help"
+    mat-icon-button
+  >
+    <mat-icon>help_outline</mat-icon>
+  </button>
+</ng-template>

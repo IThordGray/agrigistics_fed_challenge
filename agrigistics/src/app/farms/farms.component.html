@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container mat-elevation-z1 p-3 mt-2">
+  <div class="container-header d-flex justify-content-between align-items-center">
+    <div class="container-header-text d-flex flex-column">
+      <span class="h2">Farms and Blocks</span>
+      <span class="subtext">Manage farms, blocks and sub-blocks</span>
+    </div>
+
+    <div *ngIf="!isHandset" class="container-header-actions">
+      <button mat-flat-button color="primary" class="mr-2">Add farm</button>
+      <button mat-stroked-button color="primary">Add Block</button>
+    </div>
+
+    <button *ngIf="isHandset" class="fab-button" mat-fab color="accent"><mat-icon>add</mat-icon></button>
+  </div>
+
+  <app-filter class="container-filter"></app-filter>
+
+  <div class="container-content">
+    <app-table-view *ngIf="!isHandset"></app-table-view>
+    <app-list-view *ngIf="isHandset"></app-list-view>
+  </div>
+
+</div>
